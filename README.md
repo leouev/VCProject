@@ -4,7 +4,7 @@ Based on the problem descriptions from the text book "Visual C# How to Program, 
 
 Problem descriptions can be find at 8.31, 8.32, 8.33
 
-**v1.0:
+*v1.0:
 all operations needed for the following:
  input/output operations:
   const int READ = 10; Read a word from the key board into a specific location in memory.
