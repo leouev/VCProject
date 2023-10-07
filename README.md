@@ -7,8 +7,8 @@ Problem descriptions can be find at 8.31, 8.32, 8.33
 # v1.0:
 all operations needed for the following:
  ## input/output operations:
-  ### const int READ = 10; Read a word from the key board into a specific location in memory.
-  ### const int WRITE = 11; Write a word from a specific location in memory to the screen.
+  - const int READ = 10; Read a word from the key board into a specific location in memory.
+  - const int WRITE = 11; Write a word from a specific location in memory to the screen.
  ## load/store operations:
   ### const int LOAD = 20; Load a word from specific location in memeory into the accumulator.
   ### const int STORE = 21; Store a word from accumulator into a specific location in memory
