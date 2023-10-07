@@ -2,7 +2,7 @@
 This is a CISC 594 project for software configuration management project
 Based on the problem descriptions from the text book "Visual C# How to Program, 5th Edition" by Paul Deitel and Harvey Deitel.
 
-Problem descriptions can be find at 8.31, 8.32, 8.33
+Problem descriptions can be find at 8.31, 8.32, 8.33. The programming language for this project will be in Python 3.12.0
 
 # v1.0:
 all operations needed for the following:
