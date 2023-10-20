@@ -3,7 +3,7 @@ class Simpletron:
         self.memory = [0] * 100  # Memory array with 100 elements
         self.accumulator = 0
         self.instruction_counter = 0
-
+    
     def read_instruction(self):
         while True:
             try:
@@ -60,6 +60,36 @@ class Simpletron:
 
             self.instruction_counter += 1
 
+    def memory_dump(self):
+        print("REGISTERS:")
+        print(f"accumulator\t\t\t\t{self.format_4digit(self.accumulator)}")
+        print(f"instruction_counter\t\t\t{self.format_2digit(self.instruction_counter)}")
+        print(f"instruction_register\t\t\t{self.format_4digit(self.memory[self.instruction_counter])}")
+        opcode, operand = divmod(self.memory[self.instruction_counter], 100)
+        print(f"opcode\t\t\t\t\t{self.format_2digit(opcode)}")
+        print(f"operand\t\t\t\t\t{self.format_2digit(operand)}\n")
+
+        print("Memory:")
+        print("{:3}".format(""), end="")
+        for i in range(10):
+            print(f"{i:7}", end="")
+        print()
+
+        for i in range(0, 100, 10):
+            print(f"{i:2}", end="   ")
+            for j in range(i, i + 10):
+                print(self.format_4digit(self.memory[j]), end="  ")
+            print()
+
+    def format_4digit(self, word):
+        if word >= 0:
+            return f"+{word:04d}"
+        if word < 0:
+            return f"{word:05d}"
+        
+    def format_2digit(self, word):
+        return f"{word:02d}"
+
 def main():
     simpletron = Simpletron()
     
@@ -85,6 +115,7 @@ def main():
     print("*** Program execution begins ***")
     simpletron.instruction_counter = 0
     simpletron.execute_program()
+    simpletron.memory_dump()
 
 if __name__ == "__main__":
     main()
