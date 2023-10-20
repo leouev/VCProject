@@ -15,6 +15,13 @@ class Simpletron:
             except ValueError:
                 print("Invalid input. Please enter a valid integer.")
 
+    def read_file(self, program_file):
+        with open(program_file, "r") as file:
+            for line in file:
+                instruction = int(line.strip())
+                self.memory[self.instruction_counter] = instruction
+                self.instruction_counter +=1
+
     def execute_program(self):
         while True:
             opcode = self.memory[self.instruction_counter] // 100
@@ -58,15 +65,21 @@ def main():
     
     # Display welcome message
     print("*** Welcome to Simpletron! ***")
-    print("*** Please enter your program one instruction ***")
-    print("*** (or data word) at a time into the input ***")
-    print("*** text field. I will display the location ***")
-    print("*** number and a question mark (?). You then ***")
-    print("*** type the word for that location. Enter ***")
-    print("*** -99999 to stop entering your program. ***")
-
-    simpletron.read_instruction()
-
+    print("*** Please Choose an option: ***")
+    print("1. Enter program manually")
+    print("2. Load program from a file")
+    choice = input ("Enter your choice: ")
+    if choice == "1":
+        print("*** Please enter your program one instruction ***")
+        print("*** (or data word) at a time into the input ***")
+        print("*** text field. I will display the location ***")
+        print("*** number and a question mark (?). You then ***")
+        print("*** type the word for that location. Enter ***")
+        print("*** -99999 to stop entering your program. ***")
+        simpletron.read_instruction()
+    elif choice == "2":
+        program_file = input("Enter the name of the program file: ")
+        simpletron.read_file(program_file)
     # Display program loading completion message
     print("*** Program loading completed ***")
     print("*** Program execution begins ***")
