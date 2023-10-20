@@ -23,3 +23,8 @@ all operations needed for the following:
   - const int BRANCHZERO = 42; Branch to a specific location in memoery if the accumulator is zero
   - const int HALT = 43; Halt. The program has completed its task.
 
+# v2.0:
+the following functions are added:
+ - added choice at the opening of the program. option 2 is to read instruction file.
+ - added feature to read the instruction directly from file.
+ - added feature to dump memory after the completion.
