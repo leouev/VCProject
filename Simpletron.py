@@ -44,11 +44,11 @@ class Simpletron:
                 self.accumulator //= self.memory[operand]
             elif opcode == 33:
                 self.accumulator *= self.memory[operand]
-            elif self.operation_code == 34:  # REMAINDER
+            elif opcode == 34:  # REMAINDER
                 self.accumulator %= self.memory[operand]
-            elif self.operation_code == 35:  # EXPONENTIATION
+            elif opcode == 35:  # EXPONENTIATION
                 self.accumulator **= self.memory[operand]
-            elif self.operation_code == 36:  # NEWLINE
+            elif opcode == 36:  # NEWLINE
                 print()  # Output a newline
             elif opcode == 40:
                 self.instruction_counter = operand
