@@ -28,3 +28,9 @@ the following functions are added:
  - added choice at the opening of the program. option 2 is to read instruction file.
  - added feature to read the instruction directly from file.
  - added feature to dump memory after the completion.
+
+# v3.0:
+the following operations are added:
+ - added operation 34:  REMAINDER.
+ - added operation 35:  EXPONENTIATION.
+ - added operation 36:  NEWLINE.
